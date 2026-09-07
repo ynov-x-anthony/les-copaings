@@ -1,75 +1,50 @@
-# React + TypeScript + Vite
+# Face2Book
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## L'équipe
 
-Currently, two official plugins are available:
+- Théodore Najman
+- Clément Belmondo
+- Mathys Eustache--Martin
+- Hugo Paulier
+- Samuel Berard
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Le projet
 
-## React Compiler
+Face2Book est une application web inspirée du célèbre réseau social Facebook. Le projet est développé avec React et Vite. Il propose une interface composée d'une barre de navigation, d'un fil de contenu et de panneaux latéraux où l'on peut faire augmenter ou baisser le nombre de likes en cliquant sur le pouce bleu.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Lancer le projet
 
-## Expanding the ESLint configuration
+### Cloner le dépôt
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Clonez le dépôt, puis placez-vous dans le dossier du projet :
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git https://github.com/ynov-x-anthony/les-copaings.git
+cd Face2Book
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Installer les dépendances
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Installez les dépendances avec la commande suivante :
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+```
 
+### Démarrage en mode développement
+
+Lancez ensuite le serveur de développement :
+
+```bash
+npm run dev
+```
+
+Ouvrez l'adresse indiquée dans le terminal, généralement `http://localhost:5173`.
+
+### Autres commandes utiles
+
+```bash
+npm run build    # Créer la version de production
+npm run preview  # Prévisualiser la version de production
+npm run lint     # Vérifier le code
 ```

@@ -1,22 +1,33 @@
 import { useState } from 'react'
+import navBarList from './data/data.tsx';
 
-import './App.css'
+import './assets/css/index.css';
 
-import Navbar from './components/Navbar.tsx';
-import Footer from './components/Footer.tsx';
+
+
 import LeftPanel from './components/LeftPanel.tsx';
+import Navbar from './components/Navbar.tsx';
+import Feed from './components/feed.tsx';
+import RightPanel from './components/RigthPanel.tsx';
+
 
 
 function App() {
+  const [, setLink] = useState('')
+  
+  
   return (
     <>
     <div className="App">
-      <Navbar />
-    </div>
+      <Navbar setLink={setLink} navLinkList={navBarList}/>
 
-    <div className='App__body'>
+      <div className='App__body'>
       <LeftPanel/>
-      <Footer/>
+      <Feed/>
+      <RightPanel/>
+      </div>
+
+
     </div>
     </>
   ) 
